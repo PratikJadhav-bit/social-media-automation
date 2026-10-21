@@ -1,0 +1,23 @@
+[
+  {
+    "platform": "linkedin",
+    "repository": "https://github.com/Jakeschincariol/linkedin-agent-skill",
+    "revision": "add2c23882fe79180737d242ff80a5da205eda6a",
+    "license": "MIT",
+    "directory": "vendor/linkedin-agent-skill"
+  },
+  {
+    "platform": "instagram",
+    "repository": "https://github.com/Jakeschincariol/instagram-agent-skill",
+    "revision": "d03c56bb598be770c60b201f94237e5d1a4268a6",
+    "license": "MIT",
+    "directory": "vendor/instagram-agent-skill"
+  },
+  {
+    "platform": "youtube",
+    "repository": "https://github.com/Jakeschincariol/youtube-agent-skill",
+    "revision": "a2feb2104981a375ffd4f87ee04f4f5344ac43c6",
+    "license": "MIT",
+    "directory": "vendor/youtube-agent-skill"
+  }
+]

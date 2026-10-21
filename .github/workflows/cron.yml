@@ -1,0 +1,21 @@
+name: Scheduled worker trigger
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/15 * * * *'
+permissions: {}
+concurrency:
+  group: autopilot-worker
+  cancel-in-progress: false
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Trigger durable worker on your existing host
+        env:
+          APP_URL: ${{ secrets.APP_URL }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        run: |
+          test -n "$APP_URL" && test -n "$CRON_SECRET"
+          curl --fail --silent --show-error --max-time 300 --request POST --header "Authorization: Bearer $CRON_SECRET" "$APP_URL/api/cron"
